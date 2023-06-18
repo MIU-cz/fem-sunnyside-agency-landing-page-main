@@ -1,0 +1,65 @@
+/* ---footer--- */
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+:root {
+	--my-link-color: #45818e;
+}
+
+.attribution {
+	width: 100%;
+	box-sizing: border-box;
+	font-family: "Permanent Marker", cursive;
+	font-size: 12px;
+	text-align: center;
+	letter-spacing: 1px;
+	/* padding-bottom: 15px; */
+	/* margin: 20px 20px 0; */
+	padding: 20px 20px;
+	/* background-color: rgba(0, 0, 0, 0.1); */
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.attribution_description {
+	/* display: inline-block; */
+}
+
+.attribution a {
+	color: var(--my-link-color);
+}
+
+.attribution ul {
+	display: grid;
+	width: 100px;
+	grid-template: 1fr / repeat(5, 16px);
+	gap: 5px;
+}
+
+.attribution li {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+}
+
+.attribution img {
+	width: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.attribution svg,
+circle,
+rect,
+path {
+	fill: var(--my-link-color);
+}
+
+@media (min-width: 768px) {
+	.attribution {
+		position: fixed;
+		bottom: 0;
+	}
+}
