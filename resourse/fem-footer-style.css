@@ -51,9 +51,9 @@
 }
 
 .attribution svg,
-circle,
-rect,
-path {
+.attribution circle,
+.attribution rect,
+.attribution path {
 	fill: var(--my-link-color);
 }
 
