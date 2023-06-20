@@ -57,9 +57,9 @@
 	fill: var(--my-link-color);
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
 	.attribution {
 		position: fixed;
 		bottom: 0;
 	}
-}
+} */
