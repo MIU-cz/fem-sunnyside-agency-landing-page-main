@@ -18,7 +18,7 @@
 		<div class="conteiner__content">
 
 			<!-- nav bar -->
-			<div class="header__navbar flex jstf-spsbtwn">
+			<div class="header__navbar_flex">
 				<div class="navbar_logo">
 					<svg width="124" height="24" xmlns="http://www.w3.org/2000/svg">
 						<path
@@ -32,7 +32,7 @@
 						<li><a href="#">About</a></li>
 						<li><a href="#">Services</a></li>
 						<li><a href="#">Projects</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="#" class="btn">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -49,22 +49,26 @@
 
 			<!-- main banner -->
 			<section class="main-banner__conteiner">
-				<h1>We are creatives</h1>
-				<svg width="36" height="114" xmlns="http://www.w3.org/2000/svg">
-					<g stroke="#FFF" stroke-width="6" fill="none" fill-rule="evenodd" stroke-linecap="round"
-						stroke-linejoin="round">
-						<path d="M18 3v100M3 95.484l15 15 15-15" />
-					</g>
-				</svg>
+				<div class="banner_content">
+					<h1>We are creatives</h1>
+					<a href="#card__conteiner_grid">
+						<svg width="36" height="114" xmlns="http://www.w3.org/2000/svg">
+							<g stroke="#FFF" stroke-width="6" fill="none" fill-rule="evenodd" stroke-linecap="round"
+								stroke-linejoin="round">
+								<path d="M18 3v100M3 95.484l15 15 15-15" />
+							</g>
+						</svg>
+					</a>
+				</div>
 			</section>
 
 			<!-- card board -->
-			<section class="card__conteiner grid-card-board">
+			<section class="card__conteiner_grid" id="card__conteiner_grid">
 				<div class="card_item card_item_grid">
 					<h2>Transform your brand</h2>
 					<p>We are a full-service creative agency specializing in helping brands grow fast.
 						Engage your clients through compelling visuals that do most of the marketing for you.</p>
-					<a href="#">Learn more</a>
+					<a href="#" class="btn-yellow">Learn more</a>
 				</div>
 
 				<div class="card_item">
@@ -87,30 +91,41 @@
 					<h2>Stand out to the right audience</h2>
 					<p>Using a collaborative formula of designers, researchers, photographers, videographers, and
 						copywriters, we'll build and extend your brand in digital places.</p>
-					<a href="#">Learn more</a>
+					<a href="#" class="btn-softRed">Learn more</a>
 				</div>
 
-				<div class="card_item">
-					<div class="card_item_content">
-						<h2>Graphic design</h2>
-						<p>Great design makes you memorable. We deliver artwork that underscores your brand message and
-							captures potential clients' attention.</p>
+				<div class="card_item card_item_flex bg-graphicDesign">
+					<div class="item_flex_content">
+						<a href="#">
+							<h2>Graphic design</h2>
+						</a>
+						<a href="#">
+							<p>Great design makes you memorable. We deliver artwork that underscores your brand message
+								and captures potential clients' attention.</p>
+						</a>
 					</div>
 				</div>
 
-				<div class="card_item">
-					<div class="card_item_content">
-						<h2>Photography</h2>
-						<p>Increase your credibility by getting the most stunning, high-quality photos that improve your
-							business image.</p>
+				<div class="card_item card_item_flex bg-Photography">
+					<div class="item_flex_content">
+						<a href="#">
+							<h2>Photography</h2>
+						</a>
+						<a href="#">
+							<p>Increase your credibility by getting the most stunning, high-quality photos that improve
+								your business image.</p>
+						</a>
 					</div>
 				</div>
 			</section>
 
 			<!-- Testimonials -->
-			<section class="client__conteiner">
-				<h3> Client testimonials </h3>
-				<div class="client_board">
+			<section class="client__conteiner_flex">
+				<div class="client_board_header">
+					<h3> Client testimonials </h3>
+				</div>
+				<div class="client_board_grid">
+
 					<div class="client_item">
 						<div class="foto">
 							<img src="images/image-emily.jpg" alt="client foto">
@@ -155,7 +170,8 @@
 				</div>
 			</section>
 
-			<section class="galerie__conteiner">
+			<!-- Gallerie -->
+			<section class="galerie__conteiner_grid">
 
 				<picture>
 					<source media="(min-width: 992px)" srcset="images/desktop/image-gallery-milkbottles.jpg">
@@ -188,7 +204,7 @@
 	<!-- =================================== -->
 	<!-- FOOTER -->
 	<footer class="container-fluid">
-		<div class="conteiner__content grid-footer">
+		<div class="conteiner__content">
 
 			<div class="navbar_logo">
 				<svg width="124" height="24" xmlns="http://www.w3.org/2000/svg">
