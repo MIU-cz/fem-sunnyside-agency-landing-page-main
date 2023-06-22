@@ -115,11 +115,13 @@ body {
 	& .btn {
 		color: $color-text-Header;
 		background-color: $color-White;
+		text-transform: uppercase;
+		font-weight: 700;
 	}
 }
 
 // <!-- =================================== -->
-// <!-- MAIN bannert -->
+// <!-- MAIN banner -->
 .main-banner__conteiner {
 	width: 100%;
 	height: $h-mainSection - $h-nav;
@@ -154,19 +156,38 @@ body {
 // <!-- card board -->
 .card__conteiner_grid {
 	display: grid;
-	grid-template-columns: repeat(2, $w-card);
-	grid-auto-flow: row;
+	justify-content: center;
+
+	@media (min-width: 992px) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-flow: row;
+	}
+
+	@media (max-width: 992px) {
+		& div:nth-child(2) {
+			order: -1;
+		}
+	}
 }
 .card_item {
-	width: $w-card;
-	height: $h-card;
+	max-width: $w-card;
+	max-height: $h-card;
+
+	@media (max-width: 992px) {
+		// height: $h-card;
+	}
+
+	img {
+		width: 100%;
+		// height: 100%;
+	}
 }
 .card_item_grid {
 	display: grid;
 	grid-auto-flow: row;
 	align-content: center;
 	gap: $mrgn;
-	padding: $mrgn * 3;
+	padding: $mrgn;
 
 	& h2 {
 		font-family: $ff-Fraunces;
@@ -201,6 +222,7 @@ body {
 		text-transform: uppercase;
 		font-weight: 900;
 		letter-spacing: 0.1em;
+		color: $color-text-Header;
 
 		position: relative;
 
@@ -214,13 +236,55 @@ body {
 			background-color: $colorCard-yellow;
 		}
 	}
+
+	@media (max-width: 992px) {
+		margin: $mrgn * 3 0;
+	}
+	@media (min-width: 1200px) {
+		padding: $mrgn * 3;
+	}
 }
 
 .card_item_flex {
 	display: flex;
 	align-items: end;
 	justify-content: center;
-	padding: $mrgn * 2;
+	padding: 0 $mrgn;
+
+	max-width: $w-card;
+	height: $h-card;
+}
+
+.item_flex_content {
+	width: 100%;
+	text-align: center;
+	padding-bottom: $mrgn * 2;
+
+	@media (min-width: 576px) {
+		width: 70%;
+	}
+
+	@media (min-width: 1200px) {
+		padding: $mrgn * 2;
+	}
+
+	h2 {
+		font-family: $ff-Fraunces;
+		font-size: $fontSize * 2;
+	}
+
+	p {
+		margin-top: $mrgn;
+		// letter-spacing: 0.1em;
+		line-height: 1.5em;
+	}
+
+	a:hover {
+		h2,
+		p {
+			color: $color-text-Hover;
+		}
+	}
 }
 
 @mixin bg-item-flex() {
@@ -248,42 +312,24 @@ body {
 	}
 }
 
-.item_flex_content {
-	width: 70%;
-	text-align: center;
-
-	h2 {
-		font-family: $ff-Fraunces;
-		font-size: $fontSize * 2;
-	}
-
-	p {
-		margin-top: $mrgn;
-		// letter-spacing: 0.1em;
-		line-height: 1.5em;
-	}
-
-	a:hover {
-		h2,
-		p {
-			color: $color-text-Hover;
-		}
-	}
-}
-
 // <!-- =================================== -->
 // <!-- Testimonials -- >
 .client__conteiner_flex {
 	width: 100%;
-	height: $h-mainSection;
+	min-height: $h-mainSection;
 	display: flex;
 	// align-items: center;
 	align-content: center;
 	justify-content: center;
 	flex-wrap: wrap;
+
+	@media (max-width: 992px) {
+		padding-top: $mrgn * 3;
+	}
 }
+
 .client_board_header {
-	width: 100%;
+	// width: 100%;
 	text-align: center;
 
 	h3 {
@@ -297,9 +343,13 @@ body {
 .client_board_grid {
 	width: 80%;
 	display: grid;
-	grid-template: 1fr / repeat(3, 1fr);
+	grid-auto-flow: row;
 	margin-top: $mrgn * 3;
 	gap: $mrgn;
+
+	@media (min-width: 992px) {
+		grid-template: 1fr / repeat(3, 1fr);
+	}
 }
 
 .client_item {
@@ -308,6 +358,11 @@ body {
 	gap: $mrgn * 2;
 	justify-items: center;
 	text-align: center;
+
+	@media (max-width: 992px) {
+		max-width: $w-card;
+		margin-top: $mrgn * 2;
+	}
 }
 
 .foto {
@@ -344,10 +399,16 @@ body {
 // <!-- Gallerie -- >
 .galerie__conteiner_grid {
 	display: grid;
-	grid-template-columns: repeat(4, $w-figure);
+	grid-template-columns: repeat(2, 1fr);
+	margin-top: $mrgn * 3;
 
 	img {
 		width: 100%;
+	}
+
+	@media (min-width: 992px) {
+		grid-template-columns: repeat(4, 1fr);
+		margin-top: 0;
 	}
 }
 
@@ -361,6 +422,10 @@ footer {
 
 	.navbar_logo svg path {
 		fill: $color-graphicDesign-Text;
+
+		&:hover {
+			fill: $color-White;
+		}
 	}
 }
 .navbar_menu_footer {
@@ -373,23 +438,30 @@ footer {
 	a {
 		color: $color-graphicDesign-Text;
 		padding: $mrgn - 20px $mrgn - 10px;
-		border-radius: 20px;
+		// border-radius: 20px;
 
 		&:hover {
 			color: $color-White;
-			background-color: $color-bg-Hover;
+			// background-color: $color-bg-Hover;
 		}
 	}
 }
 .smm-bar {
-	margin-top: $mrgn * 2;
+	margin-top: $mrgn * 3;
 
 	ul {
 		display: grid;
 		grid-template-columns: repeat(4, auto);
 		gap: $mrgn;
 		justify-content: center;
+
+		& li:hover {
+			path {
+				fill: $color-White;
+			}
+		}
 	}
 }
 .autor {
+	margin-top: $mrgn * 2;
 }
