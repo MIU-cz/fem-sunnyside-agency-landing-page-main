@@ -209,7 +209,6 @@ body {
 		display: block;
 		width: 160px;
 		height: 12px;
-		opacity: 30%;
 		border-radius: 5px;
 
 		position: absolute;
@@ -229,11 +228,23 @@ body {
 		&.btn-softRed::after {
 			@include btn-after();
 			background-color: $colorCard-softRed;
+			opacity: 30%;
+		}
+		&.btn-softRed:hover::after {
+			@include btn-after();
+			background-color: $colorCard-softRed;
+			opacity: 100%;
 		}
 
 		&.btn-yellow::after {
 			@include btn-after();
 			background-color: $colorCard-yellow;
+			opacity: 30%;
+		}
+		&.btn-yellow:hover::after {
+			@include btn-after();
+			background-color: $colorCard-yellow;
+			opacity: 100%;
 		}
 	}
 

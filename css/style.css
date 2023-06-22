@@ -127,24 +127,48 @@ body {
   display: block;
   width: 160px;
   height: 12px;
-  opacity: 30%;
   border-radius: 5px;
   position: absolute;
   z-index: -1;
   transform: translate(-5px, -10px);
   background-color: hsl(7, 99%, 70%);
+  opacity: 30%;
+}
+.card_item_grid a.btn-softRed:hover::after {
+  content: "";
+  display: block;
+  width: 160px;
+  height: 12px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  transform: translate(-5px, -10px);
+  background-color: hsl(7, 99%, 70%);
+  opacity: 100%;
 }
 .card_item_grid a.btn-yellow::after {
   content: "";
   display: block;
   width: 160px;
   height: 12px;
-  opacity: 30%;
   border-radius: 5px;
   position: absolute;
   z-index: -1;
   transform: translate(-5px, -10px);
   background-color: hsl(51, 100%, 49%);
+  opacity: 30%;
+}
+.card_item_grid a.btn-yellow:hover::after {
+  content: "";
+  display: block;
+  width: 160px;
+  height: 12px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  transform: translate(-5px, -10px);
+  background-color: hsl(51, 100%, 49%);
+  opacity: 100%;
 }
 @media (max-width: 992px) {
   .card_item_grid {
