@@ -84,25 +84,31 @@ body {
 // <!-- NAVBAR -->
 .header__navbar_flex {
 	width: 100%;
+	height: $h-nav;
 	background-color: $color-bg-header;
 	padding: $mrgn;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
 
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-.navbar_logo {
-}
-
 .navbar_menu_top {
 	& li {
 		display: inline-block;
+		// width: 120px;
+		text-align: center;
 		// margin-right: $mrgn - 10px;
 	}
 
 	& a {
 		color: $color-White;
+		width: 120px;
 		padding: $mrgn - 20px $mrgn - 10px;
 		border-radius: 20px;
 
@@ -120,6 +126,100 @@ body {
 	}
 }
 
+// <!-- burger menu -->
+.burger-menu {
+	display: none;
+	position: absolute;
+	right: 30px;
+	width: 20px;
+	height: 20px;
+	background-color: $color-bg-footer;
+	transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+	.burger-menu {
+		display: block;
+
+		&::before,
+		&::after,
+		& span {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: white;
+			transition: all 0.3s;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		& span {
+			top: 9px;
+		}
+
+		&.active-btn::before {
+			transform: rotate(45deg);
+			top: 9px;
+		}
+		&.active-btn::after {
+			transform: rotate(135deg);
+			bottom: 9px;
+		}
+		&.active-btn span {
+			transform: scale(0);
+		}
+		&.active-btn {
+			border-radius: 50%;
+			overflow: hidden;
+		}
+	}
+
+	.navbar_menu_top {
+		position: absolute;
+		top: -150vh;
+		left: 0;
+
+		width: 100%;
+		padding: $h-nav 0;
+
+		transition: all 0.5s;
+		overflow: auto;
+
+		background-color: $color-bg-footer;
+
+		&.active-btn {
+			top: 0;
+			height: 100vh;
+		}
+
+		ul {
+			margin-top: $mrgn * 1.5;
+
+			display: grid;
+			grid-auto-flow: row;
+			justify-content: center;
+			gap: $mrgn * 1.5;
+		}
+		li {
+			display: block;
+			font-size: $fontSize * 1.5;
+			text-align: center;
+		}
+	}
+
+	.body-overflow {
+		overflow: hidden;
+	}
+
+	.navbar_logo {
+		z-index: 100;
+	}
+}
+
 // <!-- =================================== -->
 // <!-- MAIN banner -->
 .main-banner__conteiner {
@@ -129,6 +229,9 @@ body {
 	background-size: cover;
 	background-position: bottom;
 	background-repeat: no-repeat;
+
+	// padding-top: $h-nav;
+	margin-top: $h-nav;
 }
 
 .banner_content {
